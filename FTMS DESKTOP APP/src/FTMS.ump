@@ -1,0 +1,297 @@
+namespace ca.mcgill.ecse321.FTMS.model;
+
+
+
+class FTMSManager
+
+{
+
+
+    1 -> 1 StaffManager staff;
+
+ 
+
+    1 -> 1 OrderManager order;
+
+}
+
+  
+
+class StaffManager
+
+{
+
+singleton;
+
+  1-> * Employee employees;
+
+  1-> * Schedule schedules;
+
+  1-> * ScheduleRegistration scheduleRegistrations;
+
+}
+
+class Employee
+
+{
+
+  staffName;
+
+  staffRoles;
+
+  Integer hours;
+
+}
+
+
+
+class Schedule
+
+{
+
+  weekday;
+
+  Date date;
+
+  Time startTime;
+
+  Time endTime;
+
+  
+
+}
+
+
+
+class ScheduleRegistration
+
+{
+
+  autounique id;
+
+  *-> 1 Employee employee;
+
+  *-> 1 Schedule schedule;
+
+}
+
+
+
+
+
+
+
+class OrderManager
+
+{
+
+singleton;
+
+  1-> * Supply foodSupplies;
+1-> * Equipment equipments;
+  1-> * Menu menus;
+
+  1-> * OrderTracker tracker;
+
+  }
+
+
+
+class Equipment{
+
+  equipmentName;
+
+  Integer equipmentQty;
+
+  }
+
+
+
+class Supply
+
+{
+
+  foodName;
+
+  Integer foodQty;
+
+}
+
+
+
+class Menu
+
+{
+
+  mealName;
+
+ ingredientName;
+  Integer ingredientQty;
+Double price;
+
+
+
+
+  
+
+}
+
+
+
+class OrderTracker
+
+{
+
+  saleName;
+
+  Integer saleQty;
+
+}
+
+
+
+
+
+
+
+class Equipment
+
+{
+
+  position 633 156 185 75;
+
+}
+
+
+
+class Menu
+
+{
+
+  position 804 273 186 93;
+
+  position.association Ingredients__Menu 54,58 98,0;
+
+  position.association Ingredient:ingredients__Menu 71,75 98,0;
+
+}
+
+
+
+
+
+class StaffManager
+
+{
+
+  position 178 152 109 28;
+
+  position.association Schedules__StaffManager 108,41 4,0;
+
+  position.association Roles__StaffManager 30,41 27,0;
+
+  position.association Employee:employees__StaffManager 9,41 141,0;
+
+  position.association ScheduleRegistration:scheduleRegistrations__StaffManager 33,41 30,0;
+
+}
+
+
+
+class OrderManager
+
+{
+
+  position 688 35 109 41;
+
+  position.association OrderManager__OrderTracker 109,28 0,0;
+
+  position.association Menu__OrderManager 30,41 30,0;
+
+  position.association Equipment__OrderManager 36,41 176,0;
+
+  position.association Food__OrderManager 6,41 141,0;
+
+  position.association OrderManager__Supplies 0,10 113,0;
+
+  position.association OrderManager__Supply:supplies 2,41 115,0;
+
+  }
+
+
+
+class OrderTracker
+
+{
+
+  position 870 159 140 75;
+
+}
+
+
+
+
+
+class FTMSManager
+
+{
+
+  position 332 30 109 45;
+
+  position.association FTMSManager__OrderManager 110,10 0,10;
+
+  position.association FTMSManager__OrderManager:order 111,10 0,10;
+
+  position.association FTMSManager__StaffManager:staff 40,58 30,0;
+
+}
+
+
+
+class Employee
+
+{
+
+  position 20 275 144 28;
+
+}
+
+
+
+class Schedule
+
+{
+
+  position 360 297 132 109;
+
+}
+
+
+
+class Supply
+
+{
+
+  position 407 173 143 75;
+
+}
+
+
+
+
+
+class ScheduleRegistration
+
+{
+
+  position 214 473 146 58;
+
+  position.association Employee:employee__ScheduleRegistration 30,0 87,92;
+
+  position.association Schedule:schedule__ScheduleRegistration 144,0 14,109;
+
+}
+
+
+
+  //$?[End_of_model]$?
