@@ -1,0 +1,13 @@
+<manager id="1">
+  <foodSupplies id="2"/>
+  <equipments id="3"/>
+  <menus id="4">
+    <menu id="5">
+      <mealName>Hamburger</mealName>
+      <ingredientName>tomatoes</ingredientName>
+      <ingredientQty>40</ingredientQty>
+      <price>10.0</price>
+    </menu>
+  </menus>
+  <tracker id="6"/>
+</manager>

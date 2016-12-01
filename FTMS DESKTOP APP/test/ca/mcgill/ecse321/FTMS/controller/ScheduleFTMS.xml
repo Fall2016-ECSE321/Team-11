@@ -1,0 +1,11 @@
+<manager id="1">
+  <employees id="2">
+    <employee id="3">
+      <staffName>Ben</staffName>
+      <staffRoles>Chef</staffRoles>
+      <hours>40</hours>
+    </employee>
+  </employees>
+  <schedules id="4"/>
+  <scheduleRegistrations id="5"/>
+</manager>

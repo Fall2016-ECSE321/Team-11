@@ -1,0 +1,34 @@
+<manager id="1">
+  <employees id="2">
+    <employee id="3">
+      <staffName>Ben</staffName>
+      <staffRoles>Chef</staffRoles>
+      <hours>56</hours>
+    </employee>
+    <employee id="4">
+      <staffName>Roman</staffName>
+      <staffRoles>Cashier</staffRoles>
+      <hours>56</hours>
+    </employee>
+  </employees>
+  <schedules id="5">
+    <schedule id="6">
+      <weekday>monday</weekday>
+      <date id="7">2015-09-15</date>
+      <startTime id="8">08:30:00</startTime>
+      <endTime id="9">10:00:00</endTime>
+    </schedule>
+  </schedules>
+  <scheduleRegistrations id="10">
+    <scheduleRegistration id="11">
+      <id>4</id>
+      <employee reference="3"/>
+      <schedule reference="6"/>
+    </scheduleRegistration>
+    <scheduleRegistration id="12">
+      <id>5</id>
+      <employee reference="4"/>
+      <schedule reference="6"/>
+    </scheduleRegistration>
+  </scheduleRegistrations>
+</manager>
