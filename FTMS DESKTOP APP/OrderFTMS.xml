@@ -1,0 +1,40 @@
+<manager id="1">
+  <foodSupplies id="2">
+    <supply id="3">
+      <foodName>tomatoes</foodName>
+      <foodQty>20</foodQty>
+    </supply>
+    <supply id="4">
+      <foodName>salad</foodName>
+      <foodQty>30</foodQty>
+    </supply>
+    <supply id="5">
+      <foodName>beef per Kg</foodName>
+      <foodQty>20</foodQty>
+    </supply>
+  </foodSupplies>
+  <equipments id="6">
+    <equipment id="7">
+      <equipmentName>napkin per box</equipmentName>
+      <equipmentQty>2</equipmentQty>
+    </equipment>
+    <equipment id="8">
+      <equipmentName>spoon per box</equipmentName>
+      <equipmentQty>1</equipmentQty>
+    </equipment>
+  </equipments>
+  <menus id="9">
+    <menu id="10">
+      <mealName>hamburger</mealName>
+      <ingredientName>tomatoes</ingredientName>
+      <ingredientQty>1</ingredientQty>
+      <price>12.0</price>
+    </menu>
+  </menus>
+  <tracker id="11">
+    <tracker id="12">
+      <saleName>hamburger</saleName>
+      <saleQty>40</saleQty>
+    </tracker>
+  </tracker>
+</manager>

@@ -1,0 +1,84 @@
+<manager id="1">
+  <employees id="2">
+    <employee id="3">
+      <staffName>Mary Ann Chev</staffName>
+      <staffRoles>Cashier</staffRoles>
+      <hours>40</hours>
+    </employee>
+    <employee id="4">
+      <staffName>Ben Willetts</staffName>
+      <staffRoles>cook</staffRoles>
+      <hours>20</hours>
+    </employee>
+    <employee id="5">
+      <staffName>Shane McIntosh</staffName>
+      <staffRoles>Manager</staffRoles>
+      <hours>40</hours>
+    </employee>
+    <employee id="6">
+      <staffName>Max Payne</staffName>
+      <staffRoles>cashier</staffRoles>
+      <hours>10</hours>
+    </employee>
+  </employees>
+  <schedules id="7">
+    <schedule id="8">
+      <weekday>Monday</weekday>
+      <date id="9">2017-01-02</date>
+      <startTime id="10">12:00:00</startTime>
+      <endTime id="11">20:00:00</endTime>
+    </schedule>
+    <schedule id="12">
+      <weekday>Tuesday</weekday>
+      <date id="13">2017-03-07</date>
+      <startTime id="14">12:00:00</startTime>
+      <endTime id="15">20:00:00</endTime>
+    </schedule>
+    <schedule id="16">
+      <weekday>Wednesday</weekday>
+      <date id="17">2017-04-05</date>
+      <startTime id="18">12:00:00</startTime>
+      <endTime id="19">20:00:00</endTime>
+    </schedule>
+    <schedule id="20">
+      <weekday>Thursday</weekday>
+      <date id="21">2017-05-04</date>
+      <startTime id="22">12:00:00</startTime>
+      <endTime id="23">20:00:00</endTime>
+    </schedule>
+    <schedule id="24">
+      <weekday>Friday</weekday>
+      <date id="25">2017-06-09</date>
+      <startTime id="26">12:00:00</startTime>
+      <endTime id="27">17:54:19</endTime>
+    </schedule>
+    <schedule id="28">
+      <weekday>Saturday</weekday>
+      <date id="29">2017-07-08</date>
+      <startTime id="30">10:00:00</startTime>
+      <endTime id="31">17:00:00</endTime>
+    </schedule>
+  </schedules>
+  <scheduleRegistrations id="32">
+    <scheduleRegistration id="33">
+      <id>1</id>
+      <employee reference="3"/>
+      <schedule reference="8"/>
+    </scheduleRegistration>
+    <scheduleRegistration id="34">
+      <id>2</id>
+      <employee reference="4"/>
+      <schedule reference="12"/>
+    </scheduleRegistration>
+    <scheduleRegistration id="35">
+      <id>3</id>
+      <employee reference="5"/>
+      <schedule reference="20"/>
+    </scheduleRegistration>
+    <scheduleRegistration id="36">
+      <id>4</id>
+      <employee reference="6"/>
+      <schedule reference="28"/>
+    </scheduleRegistration>
+  </scheduleRegistrations>
+</manager>
