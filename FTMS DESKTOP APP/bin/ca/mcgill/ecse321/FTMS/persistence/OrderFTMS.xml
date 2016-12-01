@@ -1,0 +1,28 @@
+<manager id="1">
+  <foodSupplies id="2">
+    <supply id="3">
+      <foodName>orange</foodName>
+      <foodQty>3</foodQty>
+    </supply>
+  </foodSupplies>
+  <equipments id="4">
+    <equipment id="5">
+      <equipmentName>straw</equipmentName>
+      <equipmentQty>3</equipmentQty>
+    </equipment>
+  </equipments>
+  <menus id="6">
+    <menu id="7">
+      <mealName>hamburger</mealName>
+      <ingredientName>orange</ingredientName>
+      <ingredientQty>4</ingredientQty>
+      <price>4.0</price>
+    </menu>
+  </menus>
+  <tracker id="8">
+    <orderTracker id="9">
+      <saleName>hamburger</saleName>
+      <saleQty>4</saleQty>
+    </orderTracker>
+  </tracker>
+</manager>
