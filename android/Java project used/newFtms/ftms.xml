@@ -1,0 +1,71 @@
+<manager id="1">
+  <employees id="2">
+    <employee id="3">
+      <staffName>jsdjd</staffName>
+      <staffRoles>cash</staffRoles>
+      <hours>80</hours>
+    </employee>
+    <employee id="4">
+      <staffName>mary ann</staffName>
+      <staffRoles>cashier</staffRoles>
+      <hours>50</hours>
+    </employee>
+    <employee id="5">
+      <staffName>dhgfjfg</staffName>
+      <staffRoles>cash</staffRoles>
+      <hours>50</hours>
+    </employee>
+    <employee id="6">
+      <staffName>mary ann</staffName>
+      <staffRoles>cashier</staffRoles>
+      <hours>60</hours>
+    </employee>
+    <employee id="7">
+      <staffName>simon</staffName>
+      <staffRoles>cashier</staffRoles>
+      <hours>50</hours>
+    </employee>
+  </employees>
+  <schedules id="8">
+    <schedule id="9">
+      <weekday>monday</weekday>
+      <date id="10">2016-10-13</date>
+      <startTime id="11">11:45:05</startTime>
+      <endTime id="12">17:45:00</endTime>
+    </schedule>
+    <schedule id="13">
+      <weekday>monday</weekday>
+      <date id="14">2016-10-22</date>
+      <startTime id="15">15:48:14</startTime>
+      <endTime id="16">23:48:00</endTime>
+    </schedule>
+    <schedule id="17">
+      <weekday>wednesday</weekday>
+      <date id="18">2016-11-05</date>
+      <startTime id="19">20:38:59</startTime>
+      <endTime id="20">23:38:00</endTime>
+    </schedule>
+  </schedules>
+  <scheduleRegistrations id="21">
+    <scheduleRegistration id="22">
+      <id>1</id>
+      <employee reference="4"/>
+      <schedule reference="9"/>
+    </scheduleRegistration>
+    <scheduleRegistration id="23">
+      <id>1</id>
+      <employee reference="4"/>
+      <schedule reference="9"/>
+    </scheduleRegistration>
+    <scheduleRegistration id="24">
+      <id>1</id>
+      <employee reference="3"/>
+      <schedule reference="9"/>
+    </scheduleRegistration>
+    <scheduleRegistration id="25">
+      <id>1</id>
+      <employee reference="4"/>
+      <schedule reference="17"/>
+    </scheduleRegistration>
+  </scheduleRegistrations>
+</manager>

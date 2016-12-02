@@ -1,0 +1,29 @@
+<manager id="1">
+  <employees id="2">
+    <employee id="3">
+      <staffName>mary ann</staffName>
+      <staffRoles>hfkjsf</staffRoles>
+      <hours>69</hours>
+    </employee>
+    <employee id="4">
+      <staffName>ggrr</staffName>
+      <staffRoles>yy</staffRoles>
+      <hours>54</hours>
+    </employee>
+  </employees>
+  <schedules id="5">
+    <schedule id="6">
+      <weekday>monday</weekday>
+      <date id="7">2016-10-20</date>
+      <startTime id="8">21:22:05</startTime>
+      <endTime id="9">23:22:00</endTime>
+    </schedule>
+  </schedules>
+  <scheduleRegistrations id="10">
+    <scheduleRegistration id="11">
+      <id>1</id>
+      <employee reference="3"/>
+      <schedule reference="6"/>
+    </scheduleRegistration>
+  </scheduleRegistrations>
+</manager>

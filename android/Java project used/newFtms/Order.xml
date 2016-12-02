@@ -1,0 +1,11 @@
+<ca.mcgill.ecse321.FTMS.model.OrderManager id="1">
+  <equipments id="2">
+    <ca.mcgill.ecse321.FTMS.model.Equipment id="3">
+      <equipmentName>spoon</equipmentName>
+      <equipmentQty>2</equipmentQty>
+    </ca.mcgill.ecse321.FTMS.model.Equipment>
+  </equipments>
+  <foodSupplies id="4"/>
+  <menus id="5"/>
+  <tracker id="6"/>
+</ca.mcgill.ecse321.FTMS.model.OrderManager>

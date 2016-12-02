@@ -1,0 +1,26 @@
+<resources>
+        <string name="app_name">FTMS</string>
+        <string name="action_settings">Settings</string>
+        <string name="newequipment_supply_n_hint">Which?</string>
+        <string name="newequipment_supply_q_hint">How many?</string>
+        <string name="newequipment_button">ADD EQUIPMENT</string>
+        <string name="newsupply_button">ADD SUPPLY</string>
+        <string name="newstaff_r_hint">Role?</string>
+        <string name="newstaff_s_hint">Availabilities?</string>
+        <string name="newstaff_button">ADD STAFF</string>
+        <string name="newstaff_days_label">days?</string>
+        <string name="newstaff_hours_label">hours?</string>
+        <string name="order_button">ORDER</string>
+        <string name="customizeorder_button">CUSTOMIZE</string>
+        <string name="order_customized_button">ORDER CUSTOMIZED DISH</string>
+        <string name="newmenuitem_n_hint">Dish name?</string>
+        <string name="newmenuitem_p_hint">Price?</string>
+        <string name="newmenuitem_button">ADD DISH</string>
+        <string name="placingorder_text">Place an order</string>
+        <string name="title_activity_main_menu">mainMenu</string>
+        <string name="newstaff_n_hint">Name?</string>
+        <string name="newstaff_h_hint">Hours?</string>
+        <string name="update_schedule_button">UPDATE</string>
+        <string name="schedule_starttime_label">Start time</string>
+        <string name="schedule_endtime_label">End time</string>
+</resources>

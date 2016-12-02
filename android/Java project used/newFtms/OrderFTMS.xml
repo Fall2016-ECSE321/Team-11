@@ -1,0 +1,38 @@
+<manager id="1">
+  <equipments id="2">
+    <equipment id="3">
+      <equipmentName>bbbbbbbbbbbb</equipmentName>
+      <equipmentQty>5</equipmentQty>
+    </equipment>
+  </equipments>
+  <foodSupplies id="4">
+    <supply id="5">
+      <foodName>dddssssaaa</foodName>
+      <foodQty>4</foodQty>
+    </supply>
+    <supply id="6">
+      <foodName></foodName>
+      <foodQty>5</foodQty>
+    </supply>
+    <supply id="7">
+      <foodName>orange</foodName>
+      <foodQty>5</foodQty>
+    </supply>
+    <supply id="8">
+      <foodName>orange</foodName>
+      <foodQty>2</foodQty>
+    </supply>
+    <supply id="9">
+      <foodName>apple</foodName>
+      <foodQty>3</foodQty>
+    </supply>
+  </foodSupplies>
+  <menus id="10">
+    <menu id="11">
+      <mealName>jjdjdjjdd</mealName>
+      <ingredientName reference="9"/>
+      <ingredientQty>3</ingredientQty>
+    </menu>
+  </menus>
+  <tracker id="12"/>
+</manager>

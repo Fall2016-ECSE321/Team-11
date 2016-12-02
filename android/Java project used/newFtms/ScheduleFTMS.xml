@@ -1,0 +1,35 @@
+<manager id="1">
+  <employees id="2">
+    <employee id="3">
+      <staffName>ew</staffName>
+      <staffRoles>w</staffRoles>
+      <hours>3</hours>
+    </employee>
+  </employees>
+  <schedules id="4">
+    <schedule id="5">
+      <weekday>hfhf</weekday>
+      <date id="6">2016-11-12</date>
+      <startTime id="7">12:59:02</startTime>
+      <endTime id="8">15:59:00</endTime>
+    </schedule>
+    <schedule id="9">
+      <weekday>monday </weekday>
+      <date id="10">2016-11-28</date>
+      <startTime id="11">11:38:56</startTime>
+      <endTime id="12">16:38:00</endTime>
+    </schedule>
+  </schedules>
+  <scheduleRegistrations id="13">
+    <scheduleRegistration id="14">
+      <id>1</id>
+      <employee reference="3"/>
+      <schedule reference="5"/>
+    </scheduleRegistration>
+    <scheduleRegistration id="15">
+      <id>1</id>
+      <employee reference="3"/>
+      <schedule reference="9"/>
+    </scheduleRegistration>
+  </scheduleRegistrations>
+</manager>
