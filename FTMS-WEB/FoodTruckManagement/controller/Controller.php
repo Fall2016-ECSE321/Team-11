@@ -148,7 +148,7 @@ class Controller{
 		$equipment = new Equipment($aName, $aQuantity);
 	
 		// 2. Load all of the data
-		$pm = new PersistenceMenuFTMS();
+		$pm = new PersistenceFoodTruckManager();
 		$sm = $pm->loadDataFromStore();
 	
 		$myname = NULL;
@@ -253,6 +253,7 @@ class Controller{
 		}
 	}
 	public function createSuppliesToMenuItem ($aItem, $aSupplies) {
+	
 		// 1. Load all of the data
 		$pm2 = new PersistenceMenuFTMS();
 		$mm = $pm2->loadDataFromStore();
@@ -283,29 +284,25 @@ class Controller{
 	}
 	
 	
-	public function createOrder ($aName) {
+public function createOrder ($aName) {
 		// 1. Load all of the data
 		$pm2 = new PersistenceMenuFTMS();
 		$mm = $pm2->loadDataFromStore();
 	
 		// 2. Find the menu item names, popularities, and supplies
-		$mymenu = NULL;
-		foreach ($mm->getMenuItems() as $menuitem) {
-			$mymenu = $menuitem;
-		}
 		$myitem = NULL;
-		foreach ($mymenu->getName() as $item) {
-			if (strcmp($mymenu->getName(), $aName) == 0) {
-				$mymenu = $item;
+		foreach ($mm->getMenuItems() as $menuitem) {
+			$myitem = $menuitem;
+		}
+		if ($myitem != null) {
+			foreach ( $myitem->getPopularity () as $popularity ) {
+				$mypopularity = $popularity + 1;
+				$myitem->setPopularity ( $mypopularity );
 			}
-		}
-		foreach ($mymenu->getPopularity() as $popularity) {
-			$mypopularity = $popularity+1;
-			$mymenu->setPopularity($mypopularity);
-		}
-		foreach ($mymenu->getSupplies() as $supplies) {
-			$mysupplies = $supplies;
-			$mymenu->removeSupply($supplies);
+			foreach ( $myitem->getSupplies () as $supplies ) {
+				$mysupplies = $supplies;
+				$mymenu->removeSupply ( $supplies );
+			}
 		}
 	
 		// 3. Order the desired menu item

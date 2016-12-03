@@ -16,6 +16,7 @@ class StaffManager
   //------------------------
 
   //StaffManager Associations
+  private $equipment;
   private $employees;
   private $schedules;
   private $scheduleRegistrations;
@@ -26,6 +27,7 @@ class StaffManager
 
   private function __construct()
   {
+  	$this->equipment = array();
     $this->employees = array();
     $this->schedules = array();
     $this->scheduleRegistrations = array();
@@ -43,7 +45,42 @@ class StaffManager
   //------------------------
   // INTERFACE
   //------------------------
-
+  public function getEquipment_index($index)
+  {
+  	$aEquipment = $this->equipment[$index];
+  	return $aEquipment;
+  }
+  public function getEquipment()
+  {
+  	$newEquipment = $this->equipment;
+  	return $newEquipment;
+  }
+  public function numberOfEquipment()
+  {
+  	$number = count($this->equipment);
+  	return $number;
+  }
+  public function hasEquipment()
+  {
+  	$has = $this->numberOfEquipment() > 0;
+  	return $has;
+  }
+  public function indexOfEquipment($aEquipment)
+  {
+  	$wasFound = false;
+  	$index = 0;
+  	foreach($this->equipment as $equipment)
+  	{
+  		if ($equipment->equals($aEquipment))
+  		{
+  			$wasFound = true;
+  			break;
+  		}
+  		$index += 1;
+  	}
+  	$index = $wasFound ? $index : -1;
+  	return $index;
+  }
   public function getEmployee_index($index)
   {
     $aEmployee = $this->employees[$index];
@@ -166,7 +203,60 @@ class StaffManager
     $index = $wasFound ? $index : -1;
     return $index;
   }
-
+  public static function minimumNumberOfEquipment()
+  {
+  	return 0;
+  }
+  public function addEquipment($aEquipment)
+  {
+  	$wasAdded = false;
+  	if ($this->indexOfEquipment($aEquipment) !== -1) { return false; }
+  	$this->equipment[] = $aEquipment;
+  	$wasAdded = true;
+  	return $wasAdded;
+  }
+  public function removeEquipment($aEquipment)
+  {
+  	$wasRemoved = false;
+  	if ($this->indexOfEquipment($aEquipment) != -1)
+  	{
+  		unset($this->equipment[$this->indexOfEquipment($aEquipment)]);
+  		$this->equipment = array_values($this->equipment);
+  		$wasRemoved = true;
+  	}
+  	return $wasRemoved;
+  }
+  public function addEquipmentAt($aEquipment, $index)
+  {
+  	$wasAdded = false;
+  	if($this->addEquipment($aEquipment))
+  	{
+  		if($index < 0 ) { $index = 0; }
+  		if($index > $this->numberOfEquipment()) { $index = $this->numberOfEquipment() - 1; }
+  		array_splice($this->equipment, $this->indexOfEquipment($aEquipment), 1);
+  		array_splice($this->equipment, $index, 0, array($aEquipment));
+  		$wasAdded = true;
+  	}
+  	return $wasAdded;
+  }
+  public function addOrMoveEquipmentAt($aEquipment, $index)
+  {
+  	$wasAdded = false;
+  	if($this->indexOfEquipment($aEquipment) !== -1)
+  	{
+  		if($index < 0 ) { $index = 0; }
+  		if($index > $this->numberOfEquipment()) { $index = $this->numberOfEquipment() - 1; }
+  		array_splice($this->equipment, $this->indexOfEquipment($aEquipment), 1);
+  		array_splice($this->equipment, $index, 0, array($aEquipment));
+  		$wasAdded = true;
+  	}
+  	else
+  	{
+  		$wasAdded = $this->addEquipmentAt($aEquipment, $index);
+  	}
+  	return $wasAdded;
+  }
+  
   public static function minimumNumberOfEmployees()
   {
     return 0;

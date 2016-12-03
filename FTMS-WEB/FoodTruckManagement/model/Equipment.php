@@ -1,65 +1,66 @@
 <?php
+
 /*PLEASE DO NOT EDIT THIS CODE*/
-/*This code was generated using the UMPLE 1.22.0.5146 modeling language!*/
+/*This code was generated using the UMPLE 1.24.0-edef018 modeling language!*/
 
 class Equipment
 {
 
-  //------------------------
-  // MEMBER VARIABLES
-  //------------------------
+	//------------------------
+	// MEMBER VARIABLES
+	//------------------------
 
-  //Equipment Attributes
-  private $equipmentName;
-  private $equipmentQty;
+	//Equipment Attributes
+	private $name;
+	private $quantity;
 
-  //------------------------
-  // CONSTRUCTOR
-  //------------------------
+	//------------------------
+	// CONSTRUCTOR
+	//------------------------
 
-  public function __construct($aEquipmentName, $aEquipmentQty)
-  {
-    $this->equipmentName = $aEquipmentName;
-    $this->equipmentQty = $aEquipmentQty;
-  }
+	public function __construct($aName, $aQuantity)
+	{
+		$this->name = $aName;
+		$this->quantity = $aQuantity;
+	}
 
-  //------------------------
-  // INTERFACE
-  //------------------------
+	//------------------------
+	// INTERFACE
+	//------------------------
 
-  public function setEquipmentName($aEquipmentName)
-  {
-    $wasSet = false;
-    $this->equipmentName = $aEquipmentName;
-    $wasSet = true;
-    return $wasSet;
-  }
+	public function setName($aName)
+	{
+		$wasSet = false;
+		$this->name = $aName;
+		$wasSet = true;
+		return $wasSet;
+	}
 
-  public function setEquipmentQty($aEquipmentQty)
-  {
-    $wasSet = false;
-    $this->equipmentQty = $aEquipmentQty;
-    $wasSet = true;
-    return $wasSet;
-  }
+	public function setQuantity($aQuantity)
+	{
+		$wasSet = false;
+		$this->quantity = $aQuantity;
+		$wasSet = true;
+		return $wasSet;
+	}
 
-  public function getEquipmentName()
-  {
-    return $this->equipmentName;
-  }
+	public function getName()
+	{
+		return $this->name;
+	}
 
-  public function getEquipmentQty()
-  {
-    return $this->equipmentQty;
-  }
+	public function getQuantity()
+	{
+		return $this->quantity;
+	}
 
-  public function equals($compareTo)
-  {
-    return $this == $compareTo;
-  }
+	public function equals($compareTo)
+	{
+		return $this == $compareTo;
+	}
 
-  public function delete()
-  {}
+	public function delete()
+	{}
 
 }
 ?>
