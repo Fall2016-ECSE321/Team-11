@@ -24,11 +24,18 @@ import ca.mcgill.ecse321.FTMS.model.OrderManager;
 import ca.mcgill.ecse321.FTMS.model.StaffManager;
 import ca.mcgill.ecse321.FTMS.model.Supply;
 
-public class addMenu extends AppCompatActivity {
+/**
+ * This activity gets created when the user clicks on the button Add Menu in the MainActivity page. Its purpose is for anything to be added (initiated).
+ */
+public class AddMenu extends AppCompatActivity {
 
     private FTMSController fc = new FTMSController();
     private ArrayList<String> selectedSupplies = new ArrayList<String>();
 
+    /**
+     * Creates the supply list with checkboxes for adding a Dish (addMenuItem).
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +57,9 @@ public class addMenu extends AppCompatActivity {
         });
     }
 
+    /**
+     * Clears all the editable text in the page and error messages.
+     */
     private void refreshData() {
         TextView tvEN = (TextView) findViewById(R.id.newequipment_name);
         tvEN.setText("");
@@ -80,6 +90,9 @@ public class addMenu extends AppCompatActivity {
         updateSupplyListView();
     }
 
+    /**
+     * updates the supply list with the current values stored in the manager.
+     */
     private void updateSupplyListView() {
         OrderManager om = OrderManager.getInstance();
 
@@ -111,6 +124,10 @@ public class addMenu extends AppCompatActivity {
         selectedSupplies = new ArrayList<String>();
     }
 
+    /**
+     * Creates the equipment and stores it in the manager when user presses button "Add equipment"
+     * @param v
+     */
     public void addEquipment(View v) {
 
         EditText tv1 = (EditText) findViewById(R.id.newequipment_name);
@@ -126,6 +143,10 @@ public class addMenu extends AppCompatActivity {
         }
     }
 
+    /**
+     * Creates the supply and stores it in the manager when user presses button "Add supply"
+     * @param v
+     */
     public void addSupply(View v) {
 
         TextView tv1 = (TextView) findViewById(R.id.newsupply_name);
@@ -142,6 +163,10 @@ public class addMenu extends AppCompatActivity {
         }
     }
 
+    /**
+     * Creates the staff and stores it in the manager when user presses button "Add staff"
+     * @param v
+     */
     public void addStaff(View v) {
 
         TextView tv1 = (TextView) findViewById(R.id.newstaff_name);
@@ -157,6 +182,10 @@ public class addMenu extends AppCompatActivity {
         }
     }
 
+    /**
+     * Creates the dish based on checked items in the list it and stores it in the manager when user presses button "Add staff"
+     * @param v
+     */
     public void addMenuItem(View v) {
         OrderManager om = OrderManager.getInstance();
         List<Supply> ingredients = new ArrayList<Supply>();

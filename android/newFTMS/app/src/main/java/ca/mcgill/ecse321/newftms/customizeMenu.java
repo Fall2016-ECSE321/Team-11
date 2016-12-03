@@ -20,7 +20,10 @@ import ca.mcgill.ecse321.FTMS.model.Menu;
 import ca.mcgill.ecse321.FTMS.model.OrderManager;
 import ca.mcgill.ecse321.FTMS.model.Supply;
 
-public class customizeMenu extends AppCompatActivity {
+/**
+ * This activity gets created when the user is in the Schedule Menu and clicks on the button Customize. You can customize the order by removing some supplies from the ingredients and asking for extra supplies.
+ */
+public class CustomizeMenu extends AppCompatActivity {
 
     FTMSController fc = new FTMSController();
     private String dishSelected;
@@ -28,6 +31,10 @@ public class customizeMenu extends AppCompatActivity {
     private ArrayList<String> selectedRemoveSupplies;
     private ArrayList<String> selectedExtraSupplies;
 
+    /**
+     * Stores information about the selected dish given by the Inventory Menu and calls the methods to create the remove supplies and extra supplies lists.
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +52,9 @@ public class customizeMenu extends AppCompatActivity {
         createExtraSuppliesListView();
     }
 
+    /**
+     * Creates the remove supplies lists with checkboxes for customizing the order.
+     */
     private void createRemoveSuppliesListView() {
         ListView mil = (ListView)findViewById(R.id.remove_supplies_list);
         mil.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
@@ -87,6 +97,9 @@ public class customizeMenu extends AppCompatActivity {
         });
     }
 
+    /**
+     * Creates the extra supplies list with checkboxes for customizing the order.
+     */
     private void createExtraSuppliesListView() {
         ListView mil = (ListView)findViewById(R.id.extra_supplies_list);
         mil.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
@@ -129,6 +142,11 @@ public class customizeMenu extends AppCompatActivity {
         });
     }
 
+    /**
+     * Orders the customized meal.
+     * @param v
+     * View that calls this method, so the Order Customized Meal button.
+     */
     public void orderCustomizedMeal(View v) {
         if (selectedRemoveSupplies.size() > 0 || selectedExtraSupplies.size() > 0) {
             OrderManager om = OrderManager.getInstance();
@@ -150,6 +168,13 @@ public class customizeMenu extends AppCompatActivity {
         }
     }
 
+    /**
+     * Informs the Inventory Menu that order customization is done so it allows it to get updated with the new information.
+     * @param keyCode
+     * Code of the key that got pressed.
+     * @param event
+     * @return
+     */
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if ((keyCode == KeyEvent.KEYCODE_BACK)) {

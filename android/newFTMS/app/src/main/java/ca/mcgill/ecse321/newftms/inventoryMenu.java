@@ -17,7 +17,11 @@ import ca.mcgill.ecse321.FTMS.model.Menu;
 import ca.mcgill.ecse321.FTMS.model.OrderManager;
 import ca.mcgill.ecse321.FTMS.model.Supply;
 
-public class inventoryMenu extends AppCompatActivity {
+/**
+ * This activity gets created when the user clicks on the button Inventory Menu in the MainActivity page. You can view and modify the quantities of all inventory items you have and
+ * you can order a meal.
+ */
+public class InventoryMenu extends AppCompatActivity {
 
     private FTMSController fc = new FTMSController();
     private String equipmentSelected = null;
@@ -27,6 +31,10 @@ public class inventoryMenu extends AppCompatActivity {
     private int equipmentPosition = 0;
     private int supplyPosition = 0;
 
+    /**
+     * Creates the equipment, dishes and supplies spinners.
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -117,6 +125,9 @@ public class inventoryMenu extends AppCompatActivity {
         });
     }
 
+    /**
+     * Updates the elements in the equipment spinner with the equipment items in the order manager.
+     */
     // Equipment functions ****
     private void updateEquipmentSpinner() {
         OrderManager om = OrderManager.getInstance();
@@ -132,6 +143,11 @@ public class inventoryMenu extends AppCompatActivity {
         equipment.setSelection(equipmentPosition);
     }
 
+    /**
+     * Increases the quantity of the equipment selected
+     * @param v
+     * View that calls this method, so the up-arrow button
+     */
     public void increaseEquipment(View v) {
         if (equipmentSelected != null) {
             OrderManager om = OrderManager.getInstance();
@@ -141,6 +157,11 @@ public class inventoryMenu extends AppCompatActivity {
         }
     }
 
+    /**
+     * Decreases the quantity of the equipment selected
+     * @param v
+     * View that calls this method, so the down-arrow button
+     */
     public void decreaseEquipment(View v) {
         if (equipmentSelected != null) {
             OrderManager om = OrderManager.getInstance();
@@ -153,6 +174,9 @@ public class inventoryMenu extends AppCompatActivity {
     }
     // ****
 
+    /**
+     * Updates the elements in the dishes spinner with the meal items in the order manager.
+     */
     // Dishes functions ****
     private void updateDishSpinner() {
         OrderManager om = OrderManager.getInstance();
@@ -168,6 +192,9 @@ public class inventoryMenu extends AppCompatActivity {
         dish.setSelection(dishPosition);
     }
 
+    /**
+     * Updates the text below the dishes spinner, indicating the quantity of the selected meal that is remaining, the price and the supplies the selected meal is made of.
+     */
     public void updateDishInfo() {
         OrderManager om = OrderManager.getInstance();
         Menu myDishSelected = om.getMenu(dishSelected);
@@ -189,15 +216,25 @@ public class inventoryMenu extends AppCompatActivity {
         dishIngredients.setText(ingredients);
     }
 
+    /**
+     * Opens the CustomizeMenu activity and sends it info on the selected dish.
+     * @param v
+     * View that calls this method, so the Customize button.
+     */
     public void customizeOrder(View v) {
         if (dishSelected != null) {
-            Intent intent = new Intent(inventoryMenu.this, customizeMenu.class);
+            Intent intent = new Intent(InventoryMenu.this, CustomizeMenu.class);
             intent.putExtra("dishSelected", dishSelected);
             startActivity(intent);
             startActivityForResult(intent, 4);
         }
     }
 
+    /**
+     * Orders the selected meal and calls the dishes (for popularity value) and supplies spinners to be updated with the new values in the order manager.
+     * @param v
+     * View that calls this method, so the Order button.
+     */
     public void placeOrder(View v) {
         if (dishSelected != null) {
             Button order = (Button) findViewById(R.id.order_button);
@@ -213,6 +250,9 @@ public class inventoryMenu extends AppCompatActivity {
     }
     // ****
 
+    /**
+     * Updates the elements in the supplies spinner with the supply items in the order manager.
+     */
     // Supplies functions ****
     private void updateSuppliesSpinner() {
         OrderManager om = OrderManager.getInstance();
@@ -228,6 +268,11 @@ public class inventoryMenu extends AppCompatActivity {
         supplies.setSelection(supplyPosition);
     }
 
+    /**
+     * Increases the quantity of the supply selected
+     * @param v
+     * View that calls this method, so the up-arrow button
+     */
     public void increaseSupply(View v) {
         if (supplySelected != null) {
             OrderManager om = OrderManager.getInstance();
@@ -238,6 +283,11 @@ public class inventoryMenu extends AppCompatActivity {
         }
     }
 
+    /**
+     * Decreases the quantity of the supply selected
+     * @param v
+     * View that calls this method, so the down-arrow button
+     */
     public void decreaseSupply(View v) {
         if (supplySelected != null) {
             OrderManager om = OrderManager.getInstance();
@@ -251,6 +301,13 @@ public class inventoryMenu extends AppCompatActivity {
     }
     // ****
 
+    /**
+     * Gets called whenever user presses the back button when in the Customize Menu to come back to this activity. This method ensures this activity gets updates with the new values in the order manager.
+     * @param requestCode
+     * Integer sent to CustomizeMenu activity from this activity by the customizeOrder method.
+     * @param resultCode
+     * @param data
+     */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == 4) {

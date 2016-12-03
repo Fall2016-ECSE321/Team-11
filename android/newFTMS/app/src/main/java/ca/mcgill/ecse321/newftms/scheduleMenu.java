@@ -19,11 +19,19 @@ import ca.mcgill.ecse321.FTMS.model.Employee;
 import ca.mcgill.ecse321.FTMS.model.OrderManager;
 import ca.mcgill.ecse321.FTMS.model.StaffManager;
 
-public class scheduleMenu extends AppCompatActivity {
+/**
+ * This activity gets created when the user clicks on the button Schedule Menu in the MainActivity page. You can view and modify the schedule of
+ * of all staff members for each day of the week.
+ */
+public class ScheduleMenu extends AppCompatActivity {
 
     private int selectedStaffPosition = -1;
     private int selectedDotwPosition = 0;
 
+    /**
+     * Creates the staff and DayOfTheWeek spinners
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -78,6 +86,11 @@ public class scheduleMenu extends AppCompatActivity {
         });
     }
 
+    /**
+     * Sends label info to TimePickerFragment class
+     * @param v
+     * View that calls this method, so whenever we click on start or end times.
+     */
     // TIME METHODS ****
     public void showTimePickerDialog(View v) {
         TextView tf = (TextView) v;
@@ -89,6 +102,13 @@ public class scheduleMenu extends AppCompatActivity {
         newFragment.show(getSupportFragmentManager(), "timePicker");
     }
 
+    /**
+     * Parses hour and minute from time label
+     * @param text
+     * Raw string
+     * @return
+     * Returns a Bundle that gets sent by the method showTimePickerDialog to TimePickerFragment.
+     */
     private Bundle getTimeFromLabel(CharSequence text) {
         Bundle rtn = new Bundle();
         String comps[] = text.toString().split(":");
@@ -106,12 +126,23 @@ public class scheduleMenu extends AppCompatActivity {
         return rtn;
     }
 
+    /**
+     * Updates the time text view and set's the user-chosen time
+     * @param id
+     * id of the text view we want to edit and set the time
+     * @param hourOfDay
+     * hour value in 24-hour format.
+     * @param minute
+     */
     public void setTime(int id, int hourOfDay, int minute) {
         TextView tv = (TextView) findViewById(id);
         tv.setText(String.format("%02d:%02d", hourOfDay, minute));
     }
     // ****
 
+    /**
+     * Updates the text below the spinners by setting the role of the selected staff member.
+     */
     public void updateRoleInfo() {
         StaffManager sm = StaffManager.getInstance();
         Employee myStaffSelected = sm.getEmployee(selectedStaffPosition);
@@ -119,6 +150,9 @@ public class scheduleMenu extends AppCompatActivity {
         role.setText("Role: " + myStaffSelected.getStaffRoles());
     }
 
+    /**
+     * Updates the start and end times with the values in the staff manager
+     */
     public void updateTimesDisplay() {
         StaffManager sm = StaffManager.getInstance();
         int hourStart, hourEnd, minuteStart, minuteEnd;
@@ -141,6 +175,11 @@ public class scheduleMenu extends AppCompatActivity {
         setTime(R.id.schedule_endtime_display, hourEnd, minuteEnd);
     }
 
+    /**
+     * Updates schedule values in the staff manager by reading user-input values.
+     * @param v
+     * View that calls this method, so the Update button.
+     */
     public void updateSchedule(View v) {
         Calendar c = Calendar.getInstance(TimeZone.getTimeZone("EST"));
         Button updateBtn = (Button) findViewById(R.id.update_schedule_button);

@@ -16,11 +16,18 @@ import ca.mcgill.ecse321.FTMS.controller.FTMSController;
 import ca.mcgill.ecse321.FTMS.model.OrderManager;
 import ca.mcgill.ecse321.FTMS.model.StaffManager;
 import ca.mcgill.ecse321.FTMS.model.Supply;
-import ca.mcgill.ecse321.FTMS.persistence.PersistenceFTMSOrder;
-import ca.mcgill.ecse321.FTMS.persistence.PersistenceXStreamOrder;
 
+/**
+ * This class shows the main page which contains the three menu buttons (add, equipment and schedule). It only has one method,
+ * onCreate because it's only purpose is to help the user go to other activities.
+ */
 public class MainActivity extends AppCompatActivity {
 
+    /**
+     * In this method we do 2 main things. We were not able to get persistence to work, so we initiate all elements of the food truck
+     * here. It also has 3 onClickListeners for the 3 buttons which each start a new activity.
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -159,7 +166,7 @@ public class MainActivity extends AppCompatActivity {
 
         to_addMenu.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                startActivity(new Intent(MainActivity.this, addMenu.class));
+                startActivity(new Intent(MainActivity.this, AddMenu.class));
             }
         });
 
@@ -167,7 +174,7 @@ public class MainActivity extends AppCompatActivity {
 
         to_inventoryMenu.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                startActivity(new Intent(MainActivity.this, inventoryMenu.class));
+                startActivity(new Intent(MainActivity.this, InventoryMenu.class));
             }
         });
 
@@ -175,7 +182,7 @@ public class MainActivity extends AppCompatActivity {
 
         to_scheduleMenu.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                startActivity(new Intent(MainActivity.this, scheduleMenu.class));
+                startActivity(new Intent(MainActivity.this, ScheduleMenu.class));
             }
         });
     }

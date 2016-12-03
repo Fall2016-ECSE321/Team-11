@@ -15,10 +15,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".addMenu" />
-        <activity android:name=".inventoryMenu" />
-        <activity android:name=".scheduleMenu" />
-        <activity android:name=".customizeMenu"></activity>
+        <activity android:name=".AddMenu" />
+        <activity android:name=".InventoryMenu" />
+        <activity android:name=".ScheduleMenu" />
+        <activity android:name=".CustomizeMenu"></activity>
     </application>
 
 </manifest>
